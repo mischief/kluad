@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="/usr/local/sbin/kfcgi"
+daemon_flags="-n 1 -u www -U www -- /cgi-bin/kluad /conf/init.lua"
+
+rc_reload=NO
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
+
